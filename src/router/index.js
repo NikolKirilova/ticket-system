@@ -4,6 +4,7 @@ import Register from '../views/Register'
 import Login from '../views/Login'
 import Tickets from '../views/Tickets'
 import MyProfile from '../views/MyProfile'
+import Categories from '../views/Categories'
 
 
 Vue.use(VueRouter)
@@ -28,7 +29,13 @@ const routes = [
     path: '/my-profile',
     name: 'MyProfile',
     component: MyProfile
+  },
+  {
+    path: '/categories',
+    name: 'Categories',
+    component: Categories
   }
+ 
  
 ]
 
