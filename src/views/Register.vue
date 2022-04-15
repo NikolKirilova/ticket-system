@@ -4,7 +4,9 @@
       <div class="field">
         <label for="name">Name</label>
         <input type="text" id="name" placeholder="Name..." v-model="name" @input="$v.name.$touch()"/>
+        <div v-if="$v.name.error">
         <div class="field-error" v-if="!$v.name.required">Field is required!</div>
+        </div>
         <template v-if="errors && errors.name">
         <div class="field-error" v-for="(error, index) in errors.name" :key="index">
           {{error}}
@@ -14,8 +16,10 @@
       <div class="field">
         <label for="email">Email</label>
         <input type="email" id="email" placeholder="Email..." v-model="email"  @input="$v.email.$touch()"/>
+        <div v-if="$v.email.$error">
        <div class="field-error" v-if="!$v.email.required">Field is required!</div>
        <div class="field-error" v-if="!$v.email.email">Email is invalid!</div>
+        </div>
       <template v-if="errors && errors.email">
         <div class="field-error" v-for="(error, index) in errors.email" :key="index">
           {{error}}
@@ -31,8 +35,10 @@
           v-model="password"
            @input="$v.password.$touch()"
         />
+        <div v-if="$v.password.$error">
          <div class="field-error" v-if="!$v.password.required">Field is required!</div>
        <div class="field-error" v-if="!$v.password.minLength">Password should be at least 8 characters long!</div>
+        </div>
          <template v-if="errors && errors.password">
         <div class="field-error" v-for="(error, index) in errors.password" :key="index">
           {{error}}
@@ -48,7 +54,9 @@
           v-model="confirmPassword"
           @input="$v.confirmPassword.$touch()"
         />
+        <div v-if="!$v.confirmPassword.$error">
         <div class="field-error" v-if="!$v.confirmPassword.sameAsPassword"> Password should match!</div>
+        </div>
       </div>
       <button :disabled="$v.$invalid">Register</button>
    
