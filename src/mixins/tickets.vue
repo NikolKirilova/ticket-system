@@ -20,7 +20,21 @@ export default {
                  reject(err);
              })
         }) 
-     } 
+     } ,
+     changeTicketStatus(taskId, data){
+          return new Promise((resolve, reject) => {
+            axios(`http://taskapi.digitalsliven.com/api/tickets/complete/${taskId}`, {
+                method: 'POST',
+                data: data 
+            })
+             .then(res => {
+                 resolve(res);
+             })
+             .catch(err => {
+                 reject(err);
+             })
+        }) 
+     }
  }
 }
 </script>
