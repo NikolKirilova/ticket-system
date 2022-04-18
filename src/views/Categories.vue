@@ -25,7 +25,7 @@
            <td>{{category.description || '-'}}</td>
            <td>{{category.created_at | formatDate}}</td>
            <td>
-             <button>Edit</button>
+             <button @click="editCategoryHandler(category)">Edit</button>
              <button @click="deleteCategoryHandler(category.id)">Delete</button>
 
            </td>
@@ -42,6 +42,12 @@
     @close="newPopup = false"
     @created="createdCategoryHandler"
   />
+    <EditCategory 
+    v-if="editItem"
+    :category = "editItem"
+    @close="editItem = null"
+    @updated="updatedCategoryHandler"
+  />
   </div>
 
 </template>
@@ -50,14 +56,20 @@
 import categoriesMixin from '@/mixins/categories'
 
 import NewCategory from '@/components/categories/popups/NewCategory'
+import EditCategory from '@/components/categories/popups/EditCategory'
+
 export default {
     name: "Categories",
     mixins: [categoriesMixin],
-    components: {NewCategory},
+    components: {
+      NewCategory,
+      EditCategory
+       },
     data(){
       return {
         categories: null,
         newPopup: false,
+        editItem: null
       }
     },
     methods: {
@@ -74,6 +86,13 @@ export default {
         this.newPopup = false;
         this.getCategoriesHandler();
 
+      },
+      editCategoryHandler(category){
+          this.editItem = category;
+      },
+      updatedCategoryHandler(){
+         this.editItem = null;
+        this.getCategoriesHandler();
       },
       deleteCategoryHandler(categoryId){
          this.deleteCategory(categoryId)

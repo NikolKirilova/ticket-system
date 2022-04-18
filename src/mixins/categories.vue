@@ -35,6 +35,20 @@ export default {
              })
         }) 
      },
+      editCategories(categoryId, dataToSend) {
+        return new Promise((resolve, reject) => {
+            axios(`http://taskapi.digitalsliven.com/api/categories/${categoryId}`, {
+                method: 'PATCH',
+                data: dataToSend 
+            })
+             .then(res => {
+                 resolve(res);
+             })
+             .catch(err => {
+                 reject(err);
+             })
+        }) 
+     },
           deleteCategory(id) {
         return new Promise((resolve, reject) => {
             axios(`http://taskapi.digitalsliven.com/api/categories/${id}`, {
