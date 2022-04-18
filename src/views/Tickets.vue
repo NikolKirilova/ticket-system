@@ -1,19 +1,27 @@
 <template>
   <div class="tickets">
-    <h1>Tickets</h1>
+    <div class="tickets-actions">
+      <div>+</div>
+      <div>Incomplete Tickets</div>
+      <div>+</div>
+    </div>
+    <!-- <h1>Tickets</h1> -->
     <div class="tickets-list">
       <div 
       v-for="ticket in tickets"
       :key="ticket.id"
       class="ticket">
       <button @click="completeTaskHandler(ticket)">
-        <span v-if="ticket.status == 0">Complete</span>
-        <span v-else>Uncomplete</span>
+        <font-awesome-icon v-if="ticket.status == 0" icon="fa-solid fa-check" />
+        <font-awesome-icon v-if="ticket.status == 1" icon="fa-solid fa-times" />
+
+        <!-- <span v-if="ticket.status == 0"> </span> -->
+        <!-- <span v-else>Uncomplete</span> -->
 
         </button>
-      <span class="status">
+      <!-- <span class="status">
         {{ticket.status | statusFormat}}
-      </span>
+      </span> -->
       <span class="ticket-name">
       {{ticket.description}}
       </span>
@@ -76,5 +84,20 @@ export default {
 </script>
 
 <style scoped>
-
+.tickets{
+  width:92%;
+}
+.ticket{
+  display: flex;
+  justify-content:space-between;
+  padding: 10px;
+    border-bottom: 1px solid #f5f5f5;
+}
+.ticket-name{
+  flex:0 0 90%;
+}
+.tickets-actions{
+  margin: 30px 0;
+  display: flex;
+}
 </style>
