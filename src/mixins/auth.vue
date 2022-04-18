@@ -20,7 +20,7 @@ export default {
      },
       login(data) {
         return new Promise((resolve, reject) => {
-            axios('http://taskapi.digitalsliven.com/api/login', {
+            axios(`${process.env.VUE_APP_API_URL}/api/login`, {
                 method: 'POST',
                 data: data
             })
