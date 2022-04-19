@@ -5,11 +5,14 @@
       user name
     </div>
     <div class="navigation-links">
-   <router-link to="/">Register</router-link>
-   <router-link to="/login">Login</router-link>
-   <router-link to="/my-profile">My Profile</router-link>
-   <router-link to="/tickets">Tickets</router-link>
+   <!-- <router-link to="/">Register</router-link>
+   <router-link to="/login">Login</router-link> -->
+   <!-- <router-link to="/my-profile">My Profile</router-link> -->
+   <router-link to="/tickets">Tickets List</router-link>
+   <router-link to="/types">Tickets Types</router-link>
    <router-link to="/categories">Categories</router-link>
+   <router-link to="/users">Users</router-link>
+
   </div>
 
   </div>

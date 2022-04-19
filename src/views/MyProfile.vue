@@ -161,9 +161,7 @@ form {
 .field input {
   width:100%;
   font-size: 18px;
-    padding:5px 18px;
-             border-radius: 15px;
-    border: 1px solid #bfb7b7;
+  
 }
 
 .field-error {
@@ -196,7 +194,7 @@ button {
       display: flex;
     justify-content: space-between;
 }
-   .actions button{
+   /* .actions button{
           color: #47b2e6;
     background: #fff;
     border: 1px solid #ddd;
@@ -204,5 +202,5 @@ button {
     padding: 8px 14px;
     font-size: 16px;
      box-shadow: 0px 0px 4px 1px #ebe6e6;
-    }
+    } */
 </style>

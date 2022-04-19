@@ -3,6 +3,7 @@
  import authStore from '@/store/auth.js'
 
 export default {
+    
  methods: {
      register(data) {
         return new Promise((resolve, reject) => {
@@ -25,7 +26,7 @@ export default {
                 data: data
             })
              .then(res => {
-                 debugger;
+                 console.log(res.data)         
                  let authToken = res.data.token;
                  axios.defaults.headers.common['Authorization'] = `Bearer ${authToken}`;
                  localStorage.setItem('auth-token', authToken);

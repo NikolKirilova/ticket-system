@@ -8,15 +8,15 @@
           <div class="popup-content">
               <form @submit.prevent="createCategoryHandler">
                   <div class="field">
-                      <label for="name">Category Name:</label>
+                      <label for="name">Category Name</label>
                       <input type="text" id="name" placeholder="Category name..." v-model="name">
                    </div>
                      <div class="field">
-                      <label for="location">Location:</label>
+                      <label for="location">Location</label>
                       <input type="text" id="location" placeholder="Location..." v-model="location">
                    </div>
                          <div class="field">
-                      <label for="description">Description:</label>
+                      <label for="description">Description</label>
                       <input type="text" id="description" placeholder="Description..." v-model="description">
                    </div>
                    <button>Create category</button>
@@ -70,5 +70,9 @@ form{
   }
   .field input {
       width:480px;
+  }
+  .popup-header{
+      border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 14px;
   }
 </style>

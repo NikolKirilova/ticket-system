@@ -148,12 +148,12 @@ text-align: center;
         font-size:18px;
         margin-bottom: 5px;
     } 
-    .field input {     
+    /* .field input {     
          font-size:18px;
          padding:5px 18px;
              border-radius: 15px;
     border: 1px solid #bfb7b7;
-    }
+    } */
 
     .field-error {
         border-radius: 8px;

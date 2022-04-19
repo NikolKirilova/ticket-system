@@ -1,8 +1,15 @@
 <template>
   <div class="categories">
-     <h1>Categories</h1>  
-    <button @click="addCategoryHandler">Add Category</button>
+    <div class="options">
+
+    <button @click="addCategoryHandler" class="add-btn"><font-awesome-icon icon="fa-solid fa-plus" /> Add Category </button>
+    <div class="search-field">        
+        <input type="text" placeholder="Search"  >
+      </div>
+    </div>
+     
      <div class="categories-list">
+       <p>Showing 0 to 0 of 0 entries</p>
        <table border="1px">
          <thead>
            <tr>
@@ -69,7 +76,8 @@ export default {
       return {
         categories: null,
         newPopup: false,
-        editItem: null
+        editItem: null,
+        search: ''
       }
     },
     methods: {
@@ -109,5 +117,62 @@ export default {
 </script>
 
 <style scoped>
-  
+.categories{
+  width:92%;
+}
+.options{
+  display: flex;
+    justify-content: space-between;
+    width: 91%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+  /* .options button, table button{
+          color: #47b2e6;
+    background: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 14px;
+    font-size: 16px;
+     box-shadow: 0px 0px 5px 1px rgb(245 245 245 / 60%)
+    } */
+    table button{
+      margin-right:7px;
+    }
+      table,table td, table th{
+       border:0;
+     }
+    table{
+      border-collapse: collapse;
+      width: 92%;
+    text-align: center;
+      border-top:1px solid #ddd;
+
+    }
+
+    table th,table td{
+      border-bottom:1px solid #ddd;
+      padding-top: 5px;
+    padding-bottom: 5px;
+    }
+  table th {
+    padding-top: 8px;
+padding-bottom: 8px;
+  }
+  .categories-list p{
+    margin-bottom: 5px;
+  }
+  .fa-plus{
+        font-size: 9px;
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 3px;   
+    margin-right: 6px;
+  }
+  .add-btn{
+    display:flex;
+    align-items: center;
+  }
+ 
 </style>
