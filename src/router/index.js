@@ -5,6 +5,9 @@ import Login from '../views/Login'
 import Tickets from '../views/Tickets'
 import MyProfile from '../views/MyProfile'
 import Categories from '../views/Categories'
+import SingleTicket from '../views/SingleTicket'
+import Types from '../views/Types'
+import Users from '../views/Users'
 
 
 Vue.use(VueRouter)
@@ -21,10 +24,22 @@ const routes = [
     component: Login
   },
   {
+    path: '/tickets/:id',
+    name: 'SingleTicket',
+    component: SingleTicket,
+    props:true
+  },
+  {
     path: '/tickets',
     name: 'Tickets',
     component: Tickets
   },
+  {
+    path: '/types',
+    name: 'Types',
+    component: Types
+  },
+ 
   {
     path: '/my-profile',
     name: 'MyProfile',
@@ -34,6 +49,11 @@ const routes = [
     path: '/categories',
     name: 'Categories',
     component: Categories
+  },
+  {
+    path: '/users',
+    name: 'Users',
+    component: Users
   }
  
  

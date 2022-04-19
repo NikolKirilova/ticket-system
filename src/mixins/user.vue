@@ -29,6 +29,19 @@ export default {
                  reject(err);
              })
         }) 
+    },
+    getUsers(){
+         return new Promise((resolve, reject) => {
+            axios('http://taskapi.digitalsliven.com/api/users', {
+                method: 'GET' 
+            })
+             .then(res => {
+                 resolve(res);
+             })
+             .catch(err => {
+                 reject(err);
+             })
+        }) 
     }
 }
 }
