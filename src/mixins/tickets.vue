@@ -34,6 +34,19 @@ export default {
                  reject(err);
              })
         }) 
+     },     
+     getSingleTicket(ticketId){
+             return new Promise((resolve, reject) => {
+            axios(`http://taskapi.digitalsliven.com/api/tickets/${ticketId}`, {
+                method: 'GET' 
+            })
+             .then(res => {
+                 resolve(res);
+             })
+             .catch(err => {
+                 reject(err);
+             })
+        }) 
      }
  }
 }
