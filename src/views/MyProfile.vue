@@ -9,7 +9,7 @@
       <img v-if="profile.avatar || imageToUpload" 
       :src="profile.avatar ? 'http://taskapi.digitalsliven.com' + profile.avatar : imageToUpload" alt="" />
       <img v-else src="@/assets/profile.jpg" />
-      <input type="file" @change="addFile($event)" accept="image/*" />
+      <input type="file" @change="addFile($event)" accept="image/*" id="actual-btn"/>
     </div>
     <div class="form-holder">
       <form @submit.prevent="editProfileHandler" v-if="profile">
@@ -139,6 +139,12 @@ export default {
     padding: 20px;
     border-radius: 50%;
 }
+.image-holder input{
+  border:none;
+  font-size:14px;
+  color:#999;
+  width:100%;
+}
 form {
   width: 300px;
   margin: 50px auto;
@@ -175,7 +181,7 @@ form {
   text-align: center;
 }
 button {
-  font-size: 24px;
+  font-size: 18px;
 }
 .success-message {
   border-radius: 8px;
@@ -194,6 +200,18 @@ button {
       display: flex;
     justify-content: space-between;
 }
+input[type=file]::file-selector-button {
+  border: 1px solid #616063;
+  padding: 6px 8px;
+  border-radius: 20px;
+  font-size:12px;
+  transition: 1s;
+  background:#fff;
+}
+input[type=file]::file-selector-button:hover{
+  cursor:pointer;
+}
+ 
    /* .actions button{
           color: #47b2e6;
     background: #fff;

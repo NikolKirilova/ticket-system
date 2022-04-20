@@ -79,12 +79,21 @@ button {
   padding: 8px 14px;
   font-size: 16px;
   box-shadow: 0px 0px 5px 1px rgb(245 245 245 / 60%);
+    cursor:pointer;
+
 }
 input {
-  font-size: 18px;
-  padding: 8px 18px;
-  border-radius: 17px;
-  border: 1px solid #e5e5e5;
+    font-size: 18px; 
+    border-radius: 24px;
+    border: 1px solid #e5e5e5;
+    height: 50px;
+    width: 80%;
+    padding-left: 20px;
+   
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(199, 198, 198);
+  opacity: 1; /* Firefox */
 }
 .content {
   display: flex;
@@ -95,4 +104,5 @@ input {
 label{
   padding-bottom:6px;
 }
+ 
 </style>
