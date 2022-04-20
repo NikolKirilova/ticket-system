@@ -47,7 +47,21 @@ export default {
                  reject(err);
              })
         }) 
-     }
+     },
+          editTicket(taskId, data){
+          return new Promise((resolve, reject) => {
+            axios(`http://taskapi.digitalsliven.com/api/tickets/${taskId}`, {
+                method: 'PATCH',
+                data: data 
+            })
+             .then(res => {
+                 resolve(res);
+             })
+             .catch(err => {
+                 reject(err);
+             })
+        }) 
+     }, 
  }
 }
 </script>
